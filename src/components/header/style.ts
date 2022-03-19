@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     },
     headerInput: {
         width: 150,
-        padding: 4,
+        padding: 2,
         backgroundColor: "#333333",
         borderColor: "rgb(175, 175, 175)",
         borderWidth: 1,

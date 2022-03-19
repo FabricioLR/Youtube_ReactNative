@@ -23,7 +23,9 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "versionCode": 1,
+      "package": "com.fabriciolr.youtube_mobile"
     },
     "web": {
       "favicon": "./assets/favicon.png"

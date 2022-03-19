@@ -23,15 +23,15 @@ export default function Authenticate({ navigation }: AuthenticateProps) {
     if (email && password){
       dispatch({ type: UserTypes.LOAD_REQUEST_AUTHENTICATION, payload: { email, password }})
       if (!state.user.error){
-       // await setGenericPassword(String(state.user.data?.user.nome), String(state.user.data?.token))
+        navigation.navigate("Home")
       }
     }
   }
 
   return (
     <View style={styles.authenticate}>
-        <TextInput placeholder="Email" style={styles.email} onChange={(e: any) => setEmail(e.target.value)}/>
-        <TextInput placeholder="Password" style={styles.password} onChange={(e: any) => setPassword(e.target.value)}/>
+        <TextInput placeholder="Email" style={styles.email} onChangeText={(email) => setEmail(email)} autoCapitalize="none"/>
+        <TextInput placeholder="Password" style={styles.password} onChangeText={(password) => setPassword(password)} autoCapitalize="none"/>
         <Text style={styles.text}>Does not have an accont? <Text style={styles.link} onPress={() => navigation.navigate("Register")}>Register</Text></Text>
         <Button onPress={authenticate} title="Log In" />
     </View>

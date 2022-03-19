@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
 import { Dimensions } from "react-native"
+import { StatusBar } from "react-native";
 
 const styles = StyleSheet.create({
     home: {
@@ -16,13 +17,15 @@ const styles = StyleSheet.create({
         height: Dimensions.get("window").height - 40
     },
     miniVideo: {
+        width: "100%",
         height: 50,
         flexDirection: "row",
         backgroundColor: "#272727",
         alignItems: "center",
         justifyContent: "space-between",
-       // position: 'absolute',
-       // zIndex: 1000,
+        position: 'absolute',
+        zIndex: 1000,
+        top: Dimensions.get("window").height - 100 - Number(StatusBar.currentHeight)
     },
     video: {
         width: 130,

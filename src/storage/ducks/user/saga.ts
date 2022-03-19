@@ -22,7 +22,7 @@ export function* Authentication({ payload }: ReturnType<typeof loadRequestAuthen
     const { email, password } = payload as any
     try {
         const response: ResponseData = yield call(api.post, "Authenticate", { email, senha: password })
-
+        console.log(response)
         yield put(loadSuccessAuthentication(response.data))
     } catch (error) {
         console.log(error)

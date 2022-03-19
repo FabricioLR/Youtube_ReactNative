@@ -17,6 +17,7 @@ export interface User {
     user: {
         nome: string
         foto_url: string
+        id: number
     }
 }
 

@@ -4,6 +4,9 @@ export enum HistoricTypes {
     "LOAD_SUCCESS" = "@historic/LOAD_SUCCESS",
 
     "ADD_TO_HISTORIC_WL" = "@historic/ADD_TO_HISTORIC_WL",
+    "ADD_TO_HISTORIC_WL_SUCCESS" = "@historic/ADD_TO_HISTORIC_WL_SUCCESS",
+    "ADD_TO_HISTORIC_WL_FAILURE" = "@historic/ADD_TO_HISTORIC_WL_FAILURE",
+
     "ADD_TO_HISTORIC_WTL" = "@historic/ADD_TO_HISTORIC_WTL",
 }
 
@@ -13,7 +16,9 @@ export interface Historic {
     nome: string
     user: {
         nome: string
+        foto_url: string
     }
+    visualizacoes: number
 }
 
 export interface HistoricState {

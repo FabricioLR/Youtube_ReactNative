@@ -6,11 +6,13 @@ import rootReducer from "./ducks/rootReducer";
 import rootSaga from "./ducks/rootSaga";
 import { UserState } from "./ducks/user/types";
 import { VideoState } from "./ducks/video/types";
+import { HistoricState } from "./ducks/historic/types";
 
 export interface ApplicationState{
     videos: VideosState
     user: UserState
     video: VideoState
+    historic: HistoricState
 }
 
 const sagaMiddleware = createSagaMiddleware()

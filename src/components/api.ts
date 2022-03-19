@@ -5,7 +5,7 @@ import axios from "axios"
 //exp://192.168.3.7:19000
 
 const api = axios.create({
-    baseURL: "http://192.168.3.7:3300/"
+    baseURL: "https://yotubecopia.herokuapp.com/"
 })
 
 export default api

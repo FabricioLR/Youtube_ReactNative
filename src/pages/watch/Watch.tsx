@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import { Video } from "expo-av"
 import styles from './style';
 import Icon from "react-native-vector-icons/AntDesign"
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { VideoTypes } from '../../storage/ducks/video/types';
 
 type WathProps = {
@@ -14,6 +14,7 @@ type WathProps = {
 export default function Watch({ route, navigation }: WathProps) {
     const dispatch = useDispatch()
     const ref = useRef<any>(null)
+    
     return (
         <View style={styles.watch}>
             <Icon name="down" style={[styles.exit, { transform: [{ scale: 1.5 }]}]} size={18} onPress={async () => {

@@ -9,7 +9,7 @@ const Tab = createBottomTabNavigator()
 export default function HomeRoutes() {
   return (
     <Tab.Navigator 
-      screenOptions={({ route }) => ({ headerShown: false, tabBarIcon: ({ focused, color, size }) => {
+      screenOptions={({ route }) => ({ headerShown: false, tabBarStyle: { height: 50 }, tabBarIcon: ({ focused, color, size }) => {
         var iconName: string = ""
 
         if (route.name === 'Home') {

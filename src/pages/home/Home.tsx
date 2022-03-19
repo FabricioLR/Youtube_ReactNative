@@ -44,7 +44,7 @@ export default function Home({ navigation }: HomeProps) {
 	const ref = useRef<any>(null)
 	const dispatch = useDispatch()
 
-	console.log("state")
+	console.log(state)
 
 	useEffect(() => {
 		dispatch({ type: VideosTypes.LOAD_REQUEST })
@@ -64,12 +64,13 @@ export default function Home({ navigation }: HomeProps) {
 			users={item.users}
 			visualizacoes={item.visualizacoes}
 			navigation={navigation}
+			setLoading={setLoading}
 		/>
 	)
 	
 	return (
 		<View style={styles.home}>
-			<StatusBar barStyle="light-content" networkActivityIndicatorVisible={true} backgroundColor="white"/>
+			<StatusBar barStyle="light-content" networkActivityIndicatorVisible={true}/>
 			<Header navigation={navigation} setTitle={setTitleSearch}/>
 			<View style={styles.videos}>
 				{
@@ -96,17 +97,20 @@ export default function Home({ navigation }: HomeProps) {
 						<View style={styles.icons}>
 							{
 								loading ? 
-									<Icon name="pause" size={25} style={styles.iconPauseReturn} onPress={() => {
+									<Icon name="pause" size={25} style={{...styles.iconPauseReturn, marginRight: 17}} onPress={() => {
 										setLoading(false)
 										ref.current.pauseAsync()
 									}}/>
 								:
-									<IconF name="play" size={18} style={styles.iconPauseReturn} onPress={() => {
+									<IconF name="play" size={16} style={styles.iconPauseReturn} onPress={() => {
 										setLoading(true)
 										ref.current.playAsync()
 									}}/>
 							}
-							<Icon name="close" size={25} style={styles.iconExit} onPress={() => dispatch({ type: VideoTypes.REMOVE_VIDEO })}/>
+							<Icon name="close" size={25} style={styles.iconExit} onPress={() => {
+								ref.current.pauseAsync()
+								dispatch({ type: VideoTypes.REMOVE_VIDEO })
+							}}/>
 						</View>
 					</View>
 				:

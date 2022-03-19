@@ -15,6 +15,7 @@ export function* GetVideos(){
 
         yield put(loadSuccess(response.data.videos))
     } catch (error) {
+        console.log(error)
         yield put(loadFailure())
     }
 }
